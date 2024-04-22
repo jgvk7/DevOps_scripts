@@ -1,0 +1,295 @@
+[ec2-user@ip-172-31-80-185 ~]$ sudo yum install docker
+Last metadata expiration check: 0:00:25 ago on Mon Apr 22 03:20:09 2024.
+Dependencies resolved.
+============================================================================================================================================================================================================
+ Package                                                 Architecture                            Version                                                 Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                                  x86_64                                  25.0.3-1.amzn2023.0.1                                   amazonlinux                                   44 M
+Installing dependencies:
+ containerd                                              x86_64                                  1.7.11-1.amzn2023.0.1                                   amazonlinux                                   35 M
+ iptables-libs                                           x86_64                                  1.8.8-3.amzn2023.0.2                                    amazonlinux                                  401 k
+ iptables-nft                                            x86_64                                  1.8.8-3.amzn2023.0.2                                    amazonlinux                                  183 k
+ libcgroup                                               x86_64                                  3.0-1.amzn2023.0.1                                      amazonlinux                                   75 k
+ libnetfilter_conntrack                                  x86_64                                  1.0.8-2.amzn2023.0.2                                    amazonlinux                                   58 k
+ libnfnetlink                                            x86_64                                  1.0.1-19.amzn2023.0.2                                   amazonlinux                                   30 k
+ libnftnl                                                x86_64                                  1.2.2-2.amzn2023.0.2                                    amazonlinux                                   84 k
+ pigz                                                    x86_64                                  2.5-1.amzn2023.0.3                                      amazonlinux                                   83 k
+ runc                                                    x86_64                                  1.1.11-1.amzn2023.0.1                                   amazonlinux                                  3.0 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  10 Packages
+
+Total download size: 83 M
+Installed size: 313 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/10): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                                                       4.7 MB/s | 401 kB     00:00    
+(2/10): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                                                        7.0 MB/s | 183 kB     00:00    
+(3/10): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                                                                             3.0 MB/s |  75 kB     00:00    
+(4/10): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                                                                              1.2 MB/s |  58 kB     00:00    
+(5/10): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                                                                       1.2 MB/s |  30 kB     00:00    
+(6/10): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                                                                            1.9 MB/s |  84 kB     00:00    
+(7/10): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                                                                  2.1 MB/s |  83 kB     00:00    
+(8/10): containerd-1.7.11-1.amzn2023.0.1.x86_64.rpm                                                                                                                          50 MB/s |  35 MB     00:00    
+(9/10): docker-25.0.3-1.amzn2023.0.1.x86_64.rpm                                                                                                                              45 MB/s |  44 MB     00:00    
+(10/10): runc-1.1.11-1.amzn2023.0.1.x86_64.rpm                                                                                                                              4.6 MB/s | 3.0 MB     00:00    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        79 MB/s |  83 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                    1/1 
+  Installing       : runc-1.1.11-1.amzn2023.0.1.x86_64                                                                                                                                                 1/10 
+  Installing       : containerd-1.7.11-1.amzn2023.0.1.x86_64                                                                                                                                           2/10 
+  Running scriptlet: containerd-1.7.11-1.amzn2023.0.1.x86_64                                                                                                                                           2/10 
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                                                                    3/10 
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                                                              4/10 
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                                                         5/10 
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                                                                6/10 
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                         7/10 
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                          8/10 
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                          8/10 
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                                                               9/10 
+  Running scriptlet: docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                              10/10 
+  Installing       : docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                              10/10 
+  Running scriptlet: docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                              10/10 
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Verifying        : containerd-1.7.11-1.amzn2023.0.1.x86_64                                                                                                                                           1/10 
+  Verifying        : docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                               2/10 
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                         3/10 
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                          4/10 
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                                                               5/10 
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                                                                6/10 
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                                                         7/10 
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                                                              8/10 
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                                                                    9/10 
+  Verifying        : runc-1.1.11-1.amzn2023.0.1.x86_64                                                                                                                                                10/10 
+
+Installed:
+  containerd-1.7.11-1.amzn2023.0.1.x86_64        docker-25.0.3-1.amzn2023.0.1.x86_64                       iptables-libs-1.8.8-3.amzn2023.0.2.x86_64        iptables-nft-1.8.8-3.amzn2023.0.2.x86_64       
+  libcgroup-3.0-1.amzn2023.0.1.x86_64            libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64        libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64        libnftnl-1.2.2-2.amzn2023.0.2.x86_64           
+  pigz-2.5-1.amzn2023.0.3.x86_64                 runc-1.1.11-1.amzn2023.0.1.x86_64                        
+
+Complete!
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ sudo newgrp docker
+[root@ip-172-31-80-185 ec2-user]# 
+[root@ip-172-31-80-185 ec2-user]# 
+[root@ip-172-31-80-185 ec2-user]# 
+exit
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ sudo yum info docker
+sudo yum install docker
+sudo usermod -a -G docker ec2-user
+newgrp docker
+Last metadata expiration check: 0:05:01 ago on Mon Apr 22 03:20:09 2024.
+Installed Packages
+Name         : docker
+Version      : 25.0.3
+Release      : 1.amzn2023.0.1
+Architecture : x86_64
+Size         : 173 M
+Source       : docker-25.0.3-1.amzn2023.0.1.src.rpm
+Repository   : @System
+From repo    : amazonlinux
+Summary      : Automates deployment of containerized applications
+URL          : http://www.docker.com
+License      : ASL 2.0 and MIT and BSD and MPLv2.0 and WTFPL
+Description  : Docker is an open-source engine that automates the deployment of any
+             : application as a lightweight, portable, self-sufficient container that will
+             : run virtually anywhere.
+             : 
+             : Docker containers can encapsulate any payload, and will run consistently on
+             : and between virtually any server. The same container that a developer builds
+             : and tests on a laptop will run at scale, in production*, on VMs, bare-metal
+             : servers, OpenStack clusters, public instances, or combinations of the above.
+
+Last metadata expiration check: 0:05:01 ago on Mon Apr 22 03:20:09 2024.
+Package docker-25.0.3-1.amzn2023.0.1.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-80-185 ~]$ ## Docker-compose Installation
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
+sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+sudo chmod -v +x /usr/local/bin/docker-compose
+--2024-04-22 03:25:22--  https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64
+Resolving github.com (github.com)... 140.82.112.3
+Connecting to github.com (github.com)|140.82.112.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-Linux-x86_64 [following]
+--2024-04-22 03:25:22--  https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-Linux-x86_64
+Reusing existing connection to github.com:443.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/15045751/4d3de22a-3be4-4135-9d80-16e12ffa65d2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240422%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240422T032522Z&X-Amz-Expires=300&X-Amz-Signature=82e7f624a21cbab38c661b39b76aceb33f41ebd88367f46a0146ab25cae677c9&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=15045751&response-content-disposition=attachment%3B%20filename%3Ddocker-compose-linux-x86_64&response-content-type=application%2Foctet-stream [following]
+--2024-04-22 03:25:22--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/15045751/4d3de22a-3be4-4135-9d80-16e12ffa65d2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240422%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240422T032522Z&X-Amz-Expires=300&X-Amz-Signature=82e7f624a21cbab38c661b39b76aceb33f41ebd88367f46a0146ab25cae677c9&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=15045751&response-content-disposition=attachment%3B%20filename%3Ddocker-compose-linux-x86_64&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 62730269 (60M) [application/octet-stream]
+Saving to: ‘docker-compose-Linux-x86_64’
+
+docker-compose-Linux-x86_64                        100%[================================================================================================================>]  59.82M   139MB/s    in 0.4s    
+
+2024-04-22 03:25:23 (139 MB/s) - ‘docker-compose-Linux-x86_64’ saved [62730269/62730269]
+
+mode of '/usr/local/bin/docker-compose' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ ## Start Docker
+[ec2-user@ip-172-31-80-185 ~]$ sudo systemctl enable docker.service
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+[ec2-user@ip-172-31-80-185 ~]$ sudo systemctl start docker.service
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ client_loop: send disconnect: Broken pipe
+Gideons-MacBook-Pro:Downloads genius$ 00~ssh -i "cloud2.pem" ec2-user@ec2-44-212-37-198.compute-1.amazonaws.com01~
+-bash: 00~ssh: command not found
+Gideons-MacBook-Pro:Downloads genius$ 00~ssh -i "cloud2.pem" ec2-user@ec2-44-212-37-198.compute-1.amazonaws.com01~
+-bash: 00~ssh: command not found
+Gideons-MacBook-Pro:Downloads genius$ ssh -i "cloud2.pem" ec2-user@ec2-44-212-37-198.compute-1.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Mon Apr 22 03:20:11 2024 from 116.74.253.26
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ docker pull alpine:20240315
+20240315: Pulling from library/alpine
+2b01a0e156cd: Pull complete 
+Digest: sha256:67b8a3c4c19bbdd43de723881bc536758f5e780f8d32ef8f5ef2b72f769a3e78
+Status: Downloaded newer image for alpine:20240315
+docker.io/library/alpine:20240315
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ docker images
+REPOSITORY   TAG        IMAGE ID       CREATED       SIZE
+alpine       20240315   7f9cc4fcfea4   5 weeks ago   7.39MB
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ docker run -dit alpine:20240315
+aa4f6b148b507f9d1c8755ba99c696db2369b849d9bfe309313820fa7ef3afb1
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ docer ps
+-bash: docer: command not found
+[ec2-user@ip-172-31-80-185 ~]$ docker
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Log in to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.0.0+unknown)
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/home/ec2-user/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/ec2-user/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/ec2-user/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/ec2-user/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+[ec2-user@ip-172-31-80-185 ~]$ docker ps
+CONTAINER ID   IMAGE             COMMAND     CREATED              STATUS              PORTS     NAMES
+aa4f6b148b50   alpine:20240315   "/bin/sh"   About a minute ago   Up About a minute             goofy_borg
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ 
+[ec2-user@ip-172-31-80-185 ~]$ docker run -dit --name=jgvk alpine:20240315
+34361c11c899544d08f4814aff550df47430bf54bfedcf27dda4d337694105fc
+[ec2-user@ip-172-31-80-185 ~]$ docker ps
+CONTAINER ID   IMAGE             COMMAND     CREATED         STATUS         PORTS     NAMES
+34361c11c899   alpine:20240315   "/bin/sh"   9 seconds ago   Up 8 seconds             jgvk
+aa4f6b148b50   alpine:20240315   "/bin/sh"   4 minutes ago   Up 4 minutes             goofy_borg
+[ec2-user@ip-172-31-80-185 ~]$ 
