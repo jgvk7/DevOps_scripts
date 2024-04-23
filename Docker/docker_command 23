@@ -1,0 +1,738 @@
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ sudo yum update
+sudo yum info docker
+sudo yum install docker
+sudo usermod -a -G docker ec2-user
+newgrp docker
+Last metadata expiration check: 0:00:33 ago on Tue Apr 23 03:17:14 2024.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:34 ago on Tue Apr 23 03:17:14 2024.
+Available Packages
+Name         : docker
+Version      : 25.0.3
+Release      : 1.amzn2023.0.1
+Architecture : x86_64
+Size         : 44 M
+Source       : docker-25.0.3-1.amzn2023.0.1.src.rpm
+Repository   : amazonlinux
+Summary      : Automates deployment of containerized applications
+URL          : http://www.docker.com
+License      : ASL 2.0 and MIT and BSD and MPLv2.0 and WTFPL
+Description  : Docker is an open-source engine that automates the deployment of any
+             : application as a lightweight, portable, self-sufficient container that will
+             : run virtually anywhere.
+             : 
+             : Docker containers can encapsulate any payload, and will run consistently on
+             : and between virtually any server. The same container that a developer builds
+             : and tests on a laptop will run at scale, in production*, on VMs, bare-metal
+             : servers, OpenStack clusters, public instances, or combinations of the above.
+
+Last metadata expiration check: 0:00:34 ago on Tue Apr 23 03:17:14 2024.
+Dependencies resolved.
+============================================================================================================================================================================================================
+ Package                                                 Architecture                            Version                                                 Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                                  x86_64                                  25.0.3-1.amzn2023.0.1                                   amazonlinux                                   44 M
+Installing dependencies:
+ containerd                                              x86_64                                  1.7.11-1.amzn2023.0.1                                   amazonlinux                                   35 M
+ iptables-libs                                           x86_64                                  1.8.8-3.amzn2023.0.2                                    amazonlinux                                  401 k
+ iptables-nft                                            x86_64                                  1.8.8-3.amzn2023.0.2                                    amazonlinux                                  183 k
+ libcgroup                                               x86_64                                  3.0-1.amzn2023.0.1                                      amazonlinux                                   75 k
+ libnetfilter_conntrack                                  x86_64                                  1.0.8-2.amzn2023.0.2                                    amazonlinux                                   58 k
+ libnfnetlink                                            x86_64                                  1.0.1-19.amzn2023.0.2                                   amazonlinux                                   30 k
+ libnftnl                                                x86_64                                  1.2.2-2.amzn2023.0.2                                    amazonlinux                                   84 k
+ pigz                                                    x86_64                                  2.5-1.amzn2023.0.3                                      amazonlinux                                   83 k
+ runc                                                    x86_64                                  1.1.11-1.amzn2023.0.1                                   amazonlinux                                  3.0 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  10 Packages
+
+Total download size: 83 M
+Installed size: 313 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/10): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                                                       5.0 MB/s | 401 kB     00:00    
+(2/10): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                                                        6.9 MB/s | 183 kB     00:00    
+(3/10): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                                                                             2.2 MB/s |  75 kB     00:00    
+(4/10): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                                                                              3.0 MB/s |  58 kB     00:00    
+(5/10): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                                                                       757 kB/s |  30 kB     00:00    
+(6/10): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                                                                            3.1 MB/s |  84 kB     00:00    
+(7/10): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                                                                  3.1 MB/s |  83 kB     00:00    
+(8/10): runc-1.1.11-1.amzn2023.0.1.x86_64.rpm                                                                                                                                34 MB/s | 3.0 MB     00:00    
+(9/10): containerd-1.7.11-1.amzn2023.0.1.x86_64.rpm                                                                                                                          43 MB/s |  35 MB     00:00    
+(10/10): docker-25.0.3-1.amzn2023.0.1.x86_64.rpm                                                                                                                             37 MB/s |  44 MB     00:01    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        66 MB/s |  83 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                    1/1 
+  Installing       : runc-1.1.11-1.amzn2023.0.1.x86_64                                                                                                                                                 1/10 
+  Installing       : containerd-1.7.11-1.amzn2023.0.1.x86_64                                                                                                                                           2/10 
+  Running scriptlet: containerd-1.7.11-1.amzn2023.0.1.x86_64                                                                                                                                           2/10 
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                                                                    3/10 
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                                                              4/10 
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                                                         5/10 
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                                                                6/10 
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                         7/10 
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                          8/10 
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                          8/10 
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                                                               9/10 
+  Running scriptlet: docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                              10/10 
+  Installing       : docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                              10/10 
+  Running scriptlet: docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                              10/10 
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Verifying        : containerd-1.7.11-1.amzn2023.0.1.x86_64                                                                                                                                           1/10 
+  Verifying        : docker-25.0.3-1.amzn2023.0.1.x86_64                                                                                                                                               2/10 
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                         3/10 
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                                                          4/10 
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                                                               5/10 
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                                                                6/10 
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                                                         7/10 
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                                                              8/10 
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                                                                    9/10 
+  Verifying        : runc-1.1.11-1.amzn2023.0.1.x86_64                                                                                                                                                10/10 
+
+Installed:
+  containerd-1.7.11-1.amzn2023.0.1.x86_64        docker-25.0.3-1.amzn2023.0.1.x86_64                       iptables-libs-1.8.8-3.amzn2023.0.2.x86_64        iptables-nft-1.8.8-3.amzn2023.0.2.x86_64       
+  libcgroup-3.0-1.amzn2023.0.1.x86_64            libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64        libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64        libnftnl-1.2.2-2.amzn2023.0.2.x86_64           
+  pigz-2.5-1.amzn2023.0.3.x86_64                 runc-1.1.11-1.amzn2023.0.1.x86_64                        
+
+Complete!
+[ec2-user@ip-172-31-17-54 ~]$ ## Docker-compose Installation
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
+sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+sudo chmod -v +x /usr/local/bin/docker-compose
+--2024-04-23 03:18:15--  https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64
+Resolving github.com (github.com)... 140.82.114.3
+Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-Linux-x86_64 [following]
+--2024-04-23 03:18:15--  https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-Linux-x86_64
+Reusing existing connection to github.com:443.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/15045751/4d3de22a-3be4-4135-9d80-16e12ffa65d2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T031815Z&X-Amz-Expires=300&X-Amz-Signature=bee9ca9f00b9b33b63e8e3b442cf3961da0f3001517ad0222e4cbcc4e0c5e8be&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=15045751&response-content-disposition=attachment%3B%20filename%3Ddocker-compose-linux-x86_64&response-content-type=application%2Foctet-stream [following]
+--2024-04-23 03:18:15--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/15045751/4d3de22a-3be4-4135-9d80-16e12ffa65d2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T031815Z&X-Amz-Expires=300&X-Amz-Signature=bee9ca9f00b9b33b63e8e3b442cf3961da0f3001517ad0222e4cbcc4e0c5e8be&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=15045751&response-content-disposition=attachment%3B%20filename%3Ddocker-compose-linux-x86_64&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 62730269 (60M) [application/octet-stream]
+Saving to: ‘docker-compose-Linux-x86_64’
+
+docker-compose-Linux-x86_64                        100%[================================================================================================================>]  59.82M   257MB/s    in 0.2s    
+
+2024-04-23 03:18:16 (257 MB/s) - ‘docker-compose-Linux-x86_64’ saved [62730269/62730269]
+
+mode of '/usr/local/bin/docker-compose' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+[ec2-user@ip-172-31-17-54 ~]$ ## Start Docker
+[ec2-user@ip-172-31-17-54 ~]$ sudo systemctl enable docker.service
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+[ec2-user@ip-172-31-17-54 ~]$ sudo systemctl start docker.service
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[ec2-user@ip-172-31-17-54 ~]$ docker run -dit python:latest
+Unable to find image 'python:latest' locally
+latest: Pulling from library/python
+609c73876867: Pull complete 
+7247ea8d81e6: Pull complete 
+be374d06f382: Pull complete 
+b4580645a8e5: Pull complete 
+aa7e0aca67dd: Pull complete 
+84816cb735e2: Pull complete 
+85e25f7ceb91: Pull complete 
+849540060de4: Pull complete 
+Digest: sha256:e0e2713ebf0f7b114b8bf9fbcaba9a69ef80e996b9bb3fa5837e42c779dcdc0f
+Status: Downloaded newer image for python:latest
+b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+python       latest    099bf23b94d9   13 days ago   1.02GB
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE           COMMAND     CREATED          STATUS          PORTS     NAMES
+b21d0a36aa37   python:latest   "python3"   39 seconds ago   Up 37 seconds             nifty_mcnulty
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it nifty_mcnulty sh
+# 
+# this is my system
+sh: 2: this: not found
+# >>> num=10
+sh: 3: Syntax error: redirection unexpected
+# python 3
+python: can't open file '//3': [Errno 2] No such file or directory
+# 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE           COMMAND     CREATED         STATUS         PORTS     NAMES
+b21d0a36aa37   python:latest   "python3"   3 minutes ago   Up 3 minutes             nifty_mcnulty
+[ec2-user@ip-172-31-17-54 ~]$ docker inspect b21d0a36aa37 
+[
+    {
+        "Id": "b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e",
+        "Created": "2024-04-23T03:28:20.575251184Z",
+        "Path": "python3",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 27073,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-04-23T03:28:21.601058775Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:099bf23b94d964410e2782137f32fa313512da95a5eaff6d2d2460f31ff94aba",
+        "ResolvConfPath": "/var/lib/docker/containers/b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e/hostname",
+        "HostsPath": "/var/lib/docker/containers/b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e/hosts",
+        "LogPath": "/var/lib/docker/containers/b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e/b21d0a36aa375303631d6a77553d505efb7ac9b2d3b4cf0b61e2e19f4c079e6e-json.log",
+        "Name": "/nifty_mcnulty",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                63,
+                204
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 65536,
+                    "Soft": 32768
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/f95e4bf17c3ebcef7ed3426c8d75b7569f462b47f4acd70210790939da8e54df-init/diff:/var/lib/docker/overlay2/3ad94e5617f2a75bb420cb64d73167a7b38e7f4ee78fb3d2b00dadbcdccc8b50/diff:/var/lib/docker/overlay2/eb68193e7a406f655189ea6cf1e2c52d75f4441fd79f19611131965be36d4842/diff:/var/lib/docker/overlay2/499fd8ef4849222bdf11bc1741c4eef85a5bbf26f4e540d8082a9799a4c333d8/diff:/var/lib/docker/overlay2/424f7fd549ee6cea2fd5c053b20b60139fac4fa67c9cbd970b0292e60137e23d/diff:/var/lib/docker/overlay2/8cc9a062810a5838594f045a1a6595e43ea219ea8eb0f8b8a9a328e746518615/diff:/var/lib/docker/overlay2/5d341bfde786d6c54fb68f07d3f1a4eb6bfd24921828576b1dd295cca2261ed0/diff:/var/lib/docker/overlay2/7ea3d02fad697b5175a2d1b82fac4d8d561ea6257824840f8f28a7fd1b581ee9/diff:/var/lib/docker/overlay2/0e9cfdee521fc899b7b2426464b115130f4914d209ed83e6aa88c7f96d263b2b/diff",
+                "MergedDir": "/var/lib/docker/overlay2/f95e4bf17c3ebcef7ed3426c8d75b7569f462b47f4acd70210790939da8e54df/merged",
+                "UpperDir": "/var/lib/docker/overlay2/f95e4bf17c3ebcef7ed3426c8d75b7569f462b47f4acd70210790939da8e54df/diff",
+                "WorkDir": "/var/lib/docker/overlay2/f95e4bf17c3ebcef7ed3426c8d75b7569f462b47f4acd70210790939da8e54df/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "b21d0a36aa37",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.3",
+                "PYTHON_PIP_VERSION=24.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/dbf0c85f76fb6e1ab42aa672ffca6f0a675d9ee4/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=dfe9fd5c28dc98b5ac17979a953ea550cec37ae1b47a5116007395bfacff2ab9"
+            ],
+            "Cmd": [
+                "python3"
+            ],
+            "Image": "python:latest",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "7f4b64791f5d501ca90e9931ee8d45d929cba3b46ebc1bd1daa8995e48bcb9b3",
+            "SandboxKey": "/var/run/docker/netns/7f4b64791f5d",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "2b712a1c020c90cf0fa3c0194430c09227cfe172bb6cdfa53d72f2b09ac66f97",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "NetworkID": "38296b39ee1bf75205cce62fc942e96fd16ecd205659069baf389b13579cc3a7",
+                    "EndpointID": "2b712a1c020c90cf0fa3c0194430c09227cfe172bb6cdfa53d72f2b09ac66f97",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker logs -f b21d0a36aa37 
+Python 3.12.3 (main, Apr 10 2024, 14:35:18) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+^C
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it b21d0a36aa37 sh
+# 
+# 
+# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
+# 
+# 
+# mkdir python_learning 
+# 
+# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  python_learning  root  run  sbin	srv  sys  tmp  usr  var
+# 
+# 
+# cd python_learning
+# ls
+# echo "this is my sample file" > file1                  
+# echo "this is my sample file2" > file2
+# ls
+file1  file2
+# apt update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8786 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [12.7 kB]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [155 kB]
+Fetched 9208 kB in 2s (5917 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+# 
+# apt install htop
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libnl-3-200 libnl-genl-3-200
+Suggested packages:
+  lm-sensors lsof strace
+The following NEW packages will be installed:
+  htop libnl-3-200 libnl-genl-3-200
+0 upgraded, 3 newly installed, 0 to remove and 1 not upgraded.
+Need to get 237 kB of archives.
+After this operation, 633 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libnl-3-200 amd64 3.7.0-0.2+b1 [63.1 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 libnl-genl-3-200 amd64 3.7.0-0.2+b1 [21.6 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 htop amd64 3.2.2-2 [152 kB]
+Fetched 237 kB in 0s (7541 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libnl-3-200:amd64.
+(Reading database ... 23963 files and directories currently installed.)
+Preparing to unpack .../libnl-3-200_3.7.0-0.2+b1_amd64.deb ...
+Unpacking libnl-3-200:amd64 (3.7.0-0.2+b1) ...
+Selecting previously unselected package libnl-genl-3-200:amd64.
+Preparing to unpack .../libnl-genl-3-200_3.7.0-0.2+b1_amd64.deb ...
+Unpacking libnl-genl-3-200:amd64 (3.7.0-0.2+b1) ...
+Selecting previously unselected package htop.
+Preparing to unpack .../htop_3.2.2-2_amd64.deb ...
+Unpacking htop (3.2.2-2) ...
+Setting up libnl-3-200:amd64 (3.7.0-0.2+b1) ...
+Setting up libnl-genl-3-200:amd64 (3.7.0-0.2+b1) ...
+Setting up htop (3.2.2-2) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u4) ...
+# htop
+# apt install nginx
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  iproute2 libatm1 libbpf1 libcap2-bin libmnl0 libpam-cap libxtables12 nginx-common
+Suggested packages:
+  iproute2-doc fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  iproute2 libatm1 libbpf1 libcap2-bin libmnl0 libpam-cap libxtables12 nginx nginx-common
+0 upgraded, 9 newly installed, 0 to remove and 1 not upgraded.
+Need to get 1991 kB of archives.
+After this operation, 6138 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libbpf1 amd64 1:1.1.0-1 [145 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 libmnl0 amd64 1.0.4-3 [12.5 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 libxtables12 amd64 1.8.9-2 [30.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 libcap2-bin amd64 1:2.66-4 [34.7 kB]
+Get:5 http://deb.debian.org/debian bookworm/main amd64 iproute2 amd64 6.1.0-3 [1046 kB]
+Get:6 http://deb.debian.org/debian bookworm/main amd64 libatm1 amd64 1:2.5.1-4+b2 [68.3 kB]
+Get:7 http://deb.debian.org/debian bookworm/main amd64 libpam-cap amd64 1:2.66-4 [14.5 kB]
+Get:8 http://deb.debian.org/debian bookworm/main amd64 nginx-common all 1.22.1-9 [112 kB]
+Get:9 http://deb.debian.org/debian bookworm/main amd64 nginx amd64 1.22.1-9 [527 kB]
+Fetched 1991 kB in 0s (35.6 MB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libbpf1:amd64.
+(Reading database ... 23992 files and directories currently installed.)
+Preparing to unpack .../0-libbpf1_1%3a1.1.0-1_amd64.deb ...
+Unpacking libbpf1:amd64 (1:1.1.0-1) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../1-libmnl0_1.0.4-3_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.4-3) ...
+Selecting previously unselected package libxtables12:amd64.
+Preparing to unpack .../2-libxtables12_1.8.9-2_amd64.deb ...
+Unpacking libxtables12:amd64 (1.8.9-2) ...
+Selecting previously unselected package libcap2-bin.
+Preparing to unpack .../3-libcap2-bin_1%3a2.66-4_amd64.deb ...
+Unpacking libcap2-bin (1:2.66-4) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../4-iproute2_6.1.0-3_amd64.deb ...
+Unpacking iproute2 (6.1.0-3) ...
+Selecting previously unselected package libatm1:amd64.
+Preparing to unpack .../5-libatm1_1%3a2.5.1-4+b2_amd64.deb ...
+Unpacking libatm1:amd64 (1:2.5.1-4+b2) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../6-libpam-cap_1%3a2.66-4_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.66-4) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../7-nginx-common_1.22.1-9_all.deb ...
+Unpacking nginx-common (1.22.1-9) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../8-nginx_1.22.1-9_amd64.deb ...
+Unpacking nginx (1.22.1-9) ...
+Setting up nginx-common (1.22.1-9) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78.)
+debconf: falling back to frontend: Readline
+Setting up libatm1:amd64 (1:2.5.1-4+b2) ...
+Setting up libcap2-bin (1:2.66-4) ...
+Setting up libmnl0:amd64 (1.0.4-3) ...
+Setting up libxtables12:amd64 (1.8.9-2) ...
+Setting up libpam-cap:amd64 (1:2.66-4) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78.)
+debconf: falling back to frontend: Readline
+Setting up libbpf1:amd64 (1:1.1.0-1) ...
+Setting up iproute2 (6.1.0-3) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78.)
+debconf: falling back to frontend: Readline
+Setting up nginx (1.22.1-9) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Processing triggers for libc-bin (2.36-9+deb12u4) ...
+# 
+# 
+# 
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE           COMMAND     CREATED          STATUS          PORTS     NAMES
+b21d0a36aa37   python:latest   "python3"   16 minutes ago   Up 16 minutes             nifty_mcnulty
+[ec2-user@ip-172-31-17-54 ~]$ docker commit b21d0a36aa37 jgvk-python:latest
+sha256:b0c33692f22dccb047fb7c4c3e588e81c78ac51feca229d2e739f61bcab35944
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+jgvk-python   latest    b0c33692f22d   8 seconds ago   1.05GB
+python        latest    099bf23b94d9   13 days ago     1.02GB
+[ec2-user@ip-172-31-17-54 ~]$ docker rm -f b21d0a36aa37 
+b21d0a36aa37
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker docker run -dit jgvk-python:latest
+unknown shorthand flag: 'd' in -dit
+See 'docker --help'.
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Log in to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.0.0+unknown)
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/home/ec2-user/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/ec2-user/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/ec2-user/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/ec2-user/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+
+[ec2-user@ip-172-31-17-54 ~]$ docker run -dit jgvk-python:latest
+f5631a92c28fcaab9215efa1dd47fe17ad92664be8368902d14e69ff88adedad
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE                COMMAND     CREATED         STATUS         PORTS     NAMES
+f5631a92c28f   jgvk-python:latest   "python3"   5 seconds ago   Up 4 seconds             charming_johnson
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it f5631a92c28f sh
+# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  python_learning  root  run  sbin	srv  sys  tmp  usr  var
+# cd python_learning
+# ls
+file1  file2
+# htop
+# 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+jgvk-python   latest    b0c33692f22d   4 minutes ago   1.05GB
+python        latest    099bf23b94d9   13 days ago     1.02GB
+[ec2-user@ip-172-31-17-54 ~]$ ls
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker save -o pythonimage.tar jgvk-python:latest
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ ls
+pythonimage.tar
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE                COMMAND     CREATED         STATUS         PORTS     NAMES
+f5631a92c28f   jgvk-python:latest   "python3"   4 minutes ago   Up 4 minutes             charming_johnson
+[ec2-user@ip-172-31-17-54 ~]$ docker rm -f f5631a92c28f
+f5631a92c28f
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+jgvk-python   latest    b0c33692f22d   8 minutes ago   1.05GB
+python        latest    099bf23b94d9   13 days ago     1.02GB
+[ec2-user@ip-172-31-17-54 ~]$ docker rmi -f b0c33692f22d 
+Untagged: jgvk-python:latest
+Deleted: sha256:b0c33692f22dccb047fb7c4c3e588e81c78ac51feca229d2e739f61bcab35944
+Deleted: sha256:7f67019d8ff622d2f050d199d6f5826d1d14294aadb983571d8b86948fb58aca
+[ec2-user@ip-172-31-17-54 ~]$ docker rmi -f 099bf23b94d9
+Untagged: python:latest
+Untagged: python@sha256:e0e2713ebf0f7b114b8bf9fbcaba9a69ef80e996b9bb3fa5837e42c779dcdc0f
+Deleted: sha256:099bf23b94d964410e2782137f32fa313512da95a5eaff6d2d2460f31ff94aba
+Deleted: sha256:1662c2f3c4bb8933bd0a4d08ae8f93c2864a1a584472582c3fc8a06b9889f88d
+Deleted: sha256:c27ad9c246b3c2b3fa2a02a6c5b0df94f08cb535db3ee17d94ae36611115d266
+Deleted: sha256:460857397f38f400e120413d0a3e6916ec9cd70ff24a3887b4a20ece5b8eaa51
+Deleted: sha256:1d6b115dfde7fdd5b8d02411d280a707c0583754bf37e20392e7bec7dd29e02c
+Deleted: sha256:4681e3614185920b157ef90420741ddcaab7b1bf011590529bbaf0be27a64f30
+Deleted: sha256:9d4edd551247e9e251259300c8892e15a0a9333d80c50c6d95328fabcfe8a0fa
+Deleted: sha256:8f7e9d0b5106f868f52eea87d5d757c642b9ed403444770629f80ed98bd9f739
+Deleted: sha256:c5bb35826823702969891b025087135cceefb084dec1452af5a6fb2938bd9a13
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ ls
+pythonimage.tar
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-17-54 ~]$ ls
+pythonimage.tar
+[ec2-user@ip-172-31-17-54 ~]$ docker load -i pythonimage.tar
+c5bb35826823: Loading layer [==================================================>]  121.3MB/121.3MB
+51a9318e6edf: Loading layer [==================================================>]   49.6MB/49.6MB
+2353f7120e0e: Loading layer [==================================================>]  181.5MB/181.5MB
+893507f6057f: Loading layer [==================================================>]    597MB/597MB
+86388e04a96b: Loading layer [==================================================>]  19.25MB/19.25MB
+ea4538b98d90: Loading layer [==================================================>]  61.63MB/61.63MB
+ace481fa6a3e: Loading layer [==================================================>]   5.12kB/5.12kB
+1453d25d153a: Loading layer [==================================================>]  10.85MB/10.85MB
+8f4ca9460f3c: Loading layer [==================================================>]  29.96MB/29.96MB
+Loaded image: jgvk-python:latest
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ coker images
+bash: coker: command not found
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+jgvk-python   latest    b0c33692f22d   14 minutes ago   1.05GB
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-17-54 ~]$ docker run -dit jgvk-python:latest 
+3d3eb046827ecd9ebe2ca6da5a2f04e69b34aa3cef15ce91160d3831471316f2
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it 3d3eb046827 bash
+root@3d3eb046827e:/# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  python_learning  root  run  sbin	srv  sys  tmp  usr  var
+root@3d3eb046827e:/# cd python_learning
+root@3d3eb046827e:/python_learning# htop
+root@3d3eb046827e:/python_learning# 
+exit
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
