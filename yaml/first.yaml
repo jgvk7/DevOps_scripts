@@ -1,0 +1,16 @@
+
+Institute: "Besant Tech"
+Streams: ["devops", "cloud", "data science", "development"]
+Classroom:
+ - "fan"
+ - "chair"
+ - "Duster"
+ - "Moniter"
+
+Subject:
+ - name: "Devops"
+   student: 5
+   time: "8.30-9.30"
+ - name: "Aws"
+   student: 4
+   time: "10.00-11.00"

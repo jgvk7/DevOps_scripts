@@ -1,0 +1,218 @@
+[ec2-user@ip-172-31-17-54 ~]$ ls
+pythonimage.tar
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+3c645031de29: Pull complete 
+Digest: sha256:1b8d8ff4777f36f19bfe73ee4df61e3a0b789caeff29caa019539ec7c9a57f95
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+[ec2-user@ip-172-31-17-54 ~]$ docker run -dit ubuntu:latest
+b5420f360c1e0e433e67dce4161c46a7c1df972914f562aa0db8b7515fba43a8
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE           COMMAND       CREATED              STATUS          PORTS     NAMES
+b5420f360c1e   ubuntu:latest   "/bin/bash"   About a minute ago   Up 59 seconds             magical_goldwasser
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it magical_goldwasser bash
+root@b5420f360c1e:/# 
+root@b5420f360c1e:/# apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1077 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1753 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2259 kB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.7 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [51.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [2339 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1369 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2035 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [33.3 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [80.9 kB]
+Fetched 31.3 MB in 2s (12.7 MB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@b5420f360c1e:/# 
+root@b5420f360c1e:/# 
+root@b5420f360c1e:/# 
+root@b5420f360c1e:/# htop
+bash: htop: command not found
+root@b5420f360c1e:/# apt install htop
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libnl-3-200 libnl-genl-3-200
+Suggested packages:
+  lm-sensors lsof strace
+The following NEW packages will be installed:
+  htop libnl-3-200 libnl-genl-3-200
+0 upgraded, 3 newly installed, 0 to remove and 3 not upgraded.
+Need to get 200 kB of archives.
+After this operation, 589 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libnl-3-200 amd64 3.5.0-0.1 [59.1 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libnl-genl-3-200 amd64 3.5.0-0.1 [12.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 htop amd64 3.0.5-7build2 [128 kB]
+Fetched 200 kB in 1s (315 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libnl-3-200:amd64.
+(Reading database ... 4393 files and directories currently installed.)
+Preparing to unpack .../libnl-3-200_3.5.0-0.1_amd64.deb ...
+Unpacking libnl-3-200:amd64 (3.5.0-0.1) ...
+Selecting previously unselected package libnl-genl-3-200:amd64.
+Preparing to unpack .../libnl-genl-3-200_3.5.0-0.1_amd64.deb ...
+Unpacking libnl-genl-3-200:amd64 (3.5.0-0.1) ...
+Selecting previously unselected package htop.
+Preparing to unpack .../htop_3.0.5-7build2_amd64.deb ...
+Unpacking htop (3.0.5-7build2) ...
+Setting up libnl-3-200:amd64 (3.5.0-0.1) ...
+Setting up libnl-genl-3-200:amd64 (3.5.0-0.1) ...
+Setting up htop (3.0.5-7build2) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+root@b5420f360c1e:/# htop
+root@b5420f360c1e:/# 
+root@b5420f360c1e:/# echo "this is my file" > myfile
+root@b5420f360c1e:/# 
+root@b5420f360c1e:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  myfile  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@b5420f360c1e:/# 
+exit
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE           COMMAND       CREATED         STATUS         PORTS     NAMES
+b5420f360c1e   ubuntu:latest   "/bin/bash"   5 minutes ago   Up 5 minutes             magical_goldwasser
+[ec2-user@ip-172-31-17-54 ~]$ docker commit b5420f360c1e mycustomubuntu:latest
+sha256:c74c14414c1360a896a866a5895f57606ed364c256ffab56d3c2a471b2a2b430
+[ec2-user@ip-172-31-17-54 ~]$ docker iamges
+docker: 'iamges' is not a docker command.
+See 'docker --help'
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+mycustomubuntu   latest    c74c14414c13   8 seconds ago   130MB
+jgvk-python      latest    b0c33692f22d   24 hours ago    1.05GB
+ubuntu           latest    7af9ba4f0a47   13 days ago     77.9MB
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE           COMMAND       CREATED         STATUS         PORTS     NAMES
+b5420f360c1e   ubuntu:latest   "/bin/bash"   7 minutes ago   Up 7 minutes             magical_goldwasser
+[ec2-user@ip-172-31-17-54 ~]$ docker rm -f magical_goldwasser
+magical_goldwasser
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY       TAG       IMAGE ID       CREATED              SIZE
+mycustomubuntu   latest    c74c14414c13   About a minute ago   130MB
+jgvk-python      latest    b0c33692f22d   24 hours ago         1.05GB
+ubuntu           latest    7af9ba4f0a47   13 days ago          77.9MB
+[ec2-user@ip-172-31-17-54 ~]$ docker run -dit mycustomubuntu:latest
+ecb9331e846d0ffb6a1108e1f53a26a98918a88b8e87485cae0ebe1789edb913
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE                   COMMAND       CREATED         STATUS         PORTS     NAMES
+ecb9331e846d   mycustomubuntu:latest   "/bin/bash"   3 seconds ago   Up 2 seconds             exciting_dhawan
+[ec2-user@ip-172-31-17-54 ~]$ docker exec it exciting_dhawan bash
+Error response from daemon: No such container: it
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it exciting_dhawan bash
+root@ecb9331e846d:/# ^C
+root@ecb9331e846d:/# docker rm -f exciting_dhawan
+bash: docker: command not found
+root@ecb9331e846d:/# 
+root@ecb9331e846d:/# echo "this is my file" > myfile^C
+root@ecb9331e846d:/# 
+exit
+[ec2-user@ip-172-31-17-54 ~]$ docker rm -f exciting_dhawan
+exciting_dhawan
+[ec2-user@ip-172-31-17-54 ~]$ vim Dockerfile
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ 
+[ec2-user@ip-172-31-17-54 ~]$ cat dockerfile
+cat: dockerfile: No such file or directory
+[ec2-user@ip-172-31-17-54 ~]$ cat Dockerfile
+FROM ubuntu:latest
+WORKDIR /app
+RUN apt update -y
+RUN apt install htop -y
+RUN echo "this is my file" > myFile
+[ec2-user@ip-172-31-17-54 ~]$ doucker build -t myubuntu:v1 .
+-bash: doucker: command not found
+[ec2-user@ip-172-31-17-54 ~]$ docker build -t myubuntu:v1 .
+[+] Building 8.0s (9/9) FINISHED                                                                                                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                                   0.0s
+ => => transferring dockerfile: 206B                                                                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                                                                        0.0s
+ => [1/5] FROM docker.io/library/ubuntu:latest                                                                                                                                                         0.0s
+ => [2/5] WORKDIR /app                                                                                                                                                                                 0.0s
+ => [3/5] RUN apt update -y                                                                                                                                                                            4.2s
+ => [4/5] RUN apt install htop -y                                                                                                                                                                      2.8s 
+ => [5/5] RUN echo "this is my file" > myFile                                                                                                                                                          0.5s 
+ => exporting to image                                                                                                                                                                                 0.4s 
+ => => exporting layers                                                                                                                                                                                0.4s 
+ => => writing image sha256:c04dc7addadacbafcc4f1e11667a98d0491b14b8c968684a20589167a9bfc85d                                                                                                           0.0s 
+ => => naming to docker.io/library/myubuntu:v1                                                                                                                                                         0.0s 
+[ec2-user@ip-172-31-17-54 ~]$ docker images                                                                                                                                                                 
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+myubuntu         v1        c04dc7addada   12 seconds ago   130MB
+mycustomubuntu   latest    c74c14414c13   11 minutes ago   130MB
+jgvk-python      latest    b0c33692f22d   24 hours ago     1.05GB
+ubuntu           latest    7af9ba4f0a47   13 days ago      77.9MB
+[ec2-user@ip-172-31-17-54 ~]$ docker run -dit myubuntu:v1
+fdbe6ce5ae2eb69d476fb9edc787845c358d8a8e7ca66cce77c549341dc0e28f
+[ec2-user@ip-172-31-17-54 ~]$ docker ps
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS          PORTS     NAMES
+fdbe6ce5ae2e   myubuntu:v1   "/bin/bash"   24 seconds ago   Up 23 seconds             nostalgic_jones
+[ec2-user@ip-172-31-17-54 ~]$ docker exec -it nostalgic_jones bash
+root@fdbe6ce5ae2e:/app# 
+root@fdbe6ce5ae2e:/app# 
+root@fdbe6ce5ae2e:/app# ls
+myFile
+root@fdbe6ce5ae2e:/app# ^C
+root@fdbe6ce5ae2e:/app# 
+exit
+[ec2-user@ip-172-31-17-54 ~]$ docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+myubuntu         v1        c04dc7addada   2 minutes ago    130MB
+mycustomubuntu   latest    c74c14414c13   14 minutes ago   130MB
+jgvk-python      latest    b0c33692f22d   24 hours ago     1.05GB
+ubuntu           latest    7af9ba4f0a47   13 days ago      77.9MB
+[ec2-user@ip-172-31-17-54 ~]$ docker login
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username: gideonvijaykumar7777@gmail.com
+Password: 
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+[ec2-user@ip-172-31-17-54 ~]$ docker login
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username: gideonvijaykumar7777@gmail.com
+Password: 
+WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[ec2-user@ip-172-31-17-54 ~]$ docker tag myubuntu:v1 gideon.com/myubuntu:v1
+Error parsing reference: "gideonv@gmail.com/myubuntu:v1" is not a valid repository/tag: invalid reference format
+[ec2-user@ip-172-31-17-54 ~]$ docker tag myubuntu:v1 jg/myubuntu:v1
+[ec2-user@ip-172-31-17-54 ~]$ docker push jg/myubuntu:v1
+The push refers to repository [docker.io/jg/myubuntu]
+48d845eff838: Pushed 
+64d825233206: Pushed 
+6b2fed98d8bb: Pushed 
+28f486644500: Pushed 
+e0a9f5911802: Mounted from library/ubuntu 
+v1: digest: sha256:5d1d1d347c1e57dafbd5af07df43ad8cf97c3aee73c8b88f0a25ce83ba147596 size: 1364
+[ec2-user@ip-172-31-17-54 ~]$ 
