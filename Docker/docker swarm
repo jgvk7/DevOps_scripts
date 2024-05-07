@@ -4,8 +4,6 @@ Swarm initialized: current node (10rje2qi2zuap8yqw0m3bktor) is now a manager.
 
 To add a worker to this swarm, run the following command:
 
-    docker swarm join --token SWMTKN-1-51pl66u70rp9sobk9b4y8gje6z7f9qfvdrem84ygayx4kpwri8-0datatcv2jc9i43uzm6rnvqdj 172.31.25.110:2377
-
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
 [ec2-user@ip-172-31-25-110 ~]$ docker node ls
@@ -363,7 +361,6 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 
 servent 1
-[ec2-user@ip-172-31-26-54 ~]$ docker swarm join --token SWMTKN-1-51pl66u70rp9sobk9b4y8gje6z7f9qfvdrem84ygayx4kpwri8-0datatcv2jc9i43uzm6rnvqdj 172.31.25.110:2377
 This node joined a swarm as a worker.
 [ec2-user@ip-172-31-26-54 ~]$ 
 [ec2-user@ip-172-31-26-54 ~]$ 
@@ -421,7 +418,6 @@ bb2fe5d2264f   nginx:latest    "/docker-entrypoint.…"   About a minute ago   U
 
 
 servent 2
-[ec2-user@ip-172-31-26-54 ~]$ docker swarm join --token SWMTKN-1-51pl66u70rp9sobk9b4y8gje6z7f9qfvdrem84ygayx4kpwri8-0datatcv2jc9i43uzm6rnvqdj 172.31.25.110:2377
 This node joined a swarm as a worker.
 [ec2-user@ip-172-31-26-54 ~]$ 
 [ec2-user@ip-172-31-26-54 ~]$ 
